@@ -17,7 +17,7 @@ export default class SearchGif extends Component {
         const searchVal = val && val.trim();
         if (searchVal) {
             searchGifApi(val).then( (res) => {
-                this.setState({searchResults: res});
+                this.setState({searchResults: res.data});
             }
             );
         }
@@ -37,10 +37,13 @@ export default class SearchGif extends Component {
 
     render() {    
         return (
-        <div className="search-component">
-            <SearchInput handleChange={this.debouncedSearch} />
-            <SearchResult searchResults={this.state.searchResults} />
-        </div>
+            <div className="search-component">
+                <SearchInput handleChange={this.debouncedSearch} />
+                {
+                    (this.state.searchResults.length > 0 &&
+                    <SearchResult {...this.state.searchResults} />)
+                }
+            </div>
     );
     }
     

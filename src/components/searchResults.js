@@ -3,18 +3,24 @@ import ResultItem from './resultItem';
 
 function SearchResult(searchResults) {
 
-  function getResultItemProps() {
-    
+  function getResultItemProps(data) {
+    const {title, images, url} = data;
     return {
-      img: '',
-      title: '',
-      url: ''
+      img: images.original.url,
+      title,
+      url
     };
   }
 
+  function getResultItems() {
+    const searchRes = Object.values(searchResults);
+    const resultItems = searchRes.map(resultItem => (<ResultItem {...getResultItemProps(resultItem)} />));
+    return resultItems;
+  }
+  
   return (
     <div className="searchResult">
-      <ResultItem {...getResultItemProps()} />
+      {getResultItems()}
     </div>
   );
 }
