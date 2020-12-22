@@ -1,12 +1,12 @@
-const api_key = 'OFhQv5doz2PWxDWnGEU7z8KY19KnjONL';
+export const api_key = 'OFhQv5doz2PWxDWnGEU7z8KY19KnjONL';
 
-const limit = 3;
+export const limit = 3;
 
-const reqUrl = 'http://api.giphy.com/v1/gifs/search';
+export const reqUrl = 'http://api.giphy.com/v1/gifs/search';
 
-const copyButtonText = 'Copy';
+export const copyButtonText = 'Copy';
 
-const redirectButtonText = 'Redirect';
+export const redirectButtonText = 'Redirect';
 
 const config = {
     api_key,

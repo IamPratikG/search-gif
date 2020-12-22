@@ -6,7 +6,7 @@ function SearchResult(searchResults) {
   function getResultItemProps(data) {
     const {title, images, url} = data;
     return {
-      img: images.original.url,
+      img: images.fixed_height_small.url,
       title,
       url
     };
